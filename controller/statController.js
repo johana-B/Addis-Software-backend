@@ -1,6 +1,6 @@
 const Song = require("../model/songModel");
 const { StatusCodes } = require('http-status-codes');
-// Get the total number of songs, artists, and genres
+const CustomError = require('../error');
 const getAllStats = async (req, res) => {
     try {
         const totalSongs = await Song.countDocuments();
